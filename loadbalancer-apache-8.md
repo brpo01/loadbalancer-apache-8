@@ -18,6 +18,8 @@ There are several load balncing Algos such as:
 
 A load balancer will be configured on this project (Devops Tooling Website). The setup consists of two webservers mounted on an nfs server so as to have a shared storage system, and a database server for storing data. [https://github.com/brpo01/devops-tooling-7](https://github.com/brpo01/devops-tooling-7/blob/master/devops-tooling-7.md).We'll see how to configure apache as a loadbalancer
 
+![4](https://user-images.githubusercontent.com/47898882/128522059-412ebdf0-ea6e-4042-b020-f6387eb99df9.JPG)
+
 # **CONFIGURE APACHE AS A LOAD BALANCER**
 - Spin an Ubuntu Server EC2 instance and make sure to allow inbound connections from port 80.
 
@@ -52,6 +54,11 @@ $ sudo vi /etc/apache2/sites-available/000-default.conf
 ![8a](https://user-images.githubusercontent.com/47898882/128518552-17528853-e704-4a32-b69c-27b25dd4e33e.JPG)
 
 From the image above, you can see that the load balancing method `lbmethod` used for configuring this setup is `bytraffic`, which means the distribution of incomung load/requests is based on the currrent traffic load. Other load balancing methods include `bybusyness`, `byrequests`, `heartbeat`.
+
+- After Configuration, the setup should look like the image below:
+
+![3](https://user-images.githubusercontent.com/47898882/128522058-92608dff-8b7b-46bd-8329-923f12e8047a.JPG)
+
 
 - Test your setup on the browser using the load balancer public ipaddress
 
